@@ -1,7 +1,7 @@
 {
-  "name": "webpack-multi-skeleton",
-  "version": "1.0.0",
-  "description": "",
+  "name": "{{name}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
   "main": "index.js",
   "scripts": {
     "dev": "set NODE_ENV=dev && webpack-dev-server --open --progress --color",
@@ -10,8 +10,15 @@
     "start": "http-server ./dist -p 8888 -o",
     "start2": "http-server ./dist -p 8888"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "{{author}}",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  {% if !private %}
+  "license": "{{license}}",
+  {% else %}
+  "private": {{private}},
+  {% endif %}
   "devDependencies": {
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
